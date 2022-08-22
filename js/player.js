@@ -32,8 +32,15 @@ const displayPlayer=document.getElementById('player-display');
 document.getElementById("calculate-btn").addEventListener('click',function(){
     let totalPlayer=count;
     const totalPlayerInputField=getTextInputFieldValue('per-player-cost');
-    const totalPlayerExpenses=totalPlayerInputField*totalPlayer;
+    if(isNaN(totalPlayerInputField) ){
+        
+        alert('please provide valid input.');
+        return;
+        
+      }
     const PlayerExpenses=document.getElementById('player-expenses')
+
+    const totalPlayerExpenses=totalPlayerInputField*totalPlayer;
     setPerPlayerCostById('player-expenses', totalPlayerExpenses);
 
 })
@@ -46,9 +53,22 @@ document.getElementById('calculate-total').addEventListener('click',function(){
     const PlayerExpenses=document.getElementById('player-expenses')
     const playerExpensesValue=parseFloat(PlayerExpenses.innerText);
     const managerInputFieldValue= getTextInputFieldValue('manager-input');
+    if(isNaN(managerInputFieldValue) ){
+        
+        alert('please provide valid input.');
+        return;
+        
+      }
     const coachInputFieldValue= getTextInputFieldValue('coach-input');
+    if(isNaN(coachInputFieldValue) ){
+        
+        alert('please provide valid input.');
+        return;
+        
+      }
     let totalCostValue=playerExpensesValue+ managerInputFieldValue+coachInputFieldValue;
      setTotalCostById('total-cost',totalCostValue);
+
  })
 
 
