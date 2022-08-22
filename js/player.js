@@ -7,48 +7,49 @@ const playerElement=button.parentNode.parentNode.children[0].innerText;
 const displayPlayer=document.getElementById('player-display');
 
     if(count==5){
-        alert("you don't added than five player");
+        button.removeAttribute('disabled',false);
+        alert("you can't added than five player..");
         return;
     }
 
     else{
-        const tr=document.createElement("tr");
-        tr.innerHTML=` 
-        <td>${count+1}.</td>
-        <td>${playerElement}</td>
+        const ol=document.createElement("ol");
+        ol.innerHTML=` 
+        <span>${count+1}.</span>
+        <span>${playerElement}</span>
         
         `;
-       displayPlayer.appendChild(tr);
+        ol.style.listStyle='none';
+        ol.style.display="inline-block"
+       displayPlayer.appendChild(ol);
        count++;
        
     }
 }
 
+
+//added Event Handler in calculate button
 document.getElementById("calculate-btn").addEventListener('click',function(){
     let totalPlayer=count;
-    const totalPlayerInputField=getPerPlayerCost('per-player-cost');
+    const totalPlayerInputField=getTextInputFieldValue('per-player-cost');
     const totalPlayerExpenses=totalPlayerInputField*totalPlayer;
     const PlayerExpenses=document.getElementById('player-expenses')
     setPerPlayerCostById('player-expenses', totalPlayerExpenses);
 
 })
 
+//added Event Handler in calculate total button
 document.getElementById('calculate-total').addEventListener('click',function(){
         
 
     let totalCost= document.getElementById('total-cost');
     const PlayerExpenses=document.getElementById('player-expenses')
     const playerExpensesValue=parseFloat(PlayerExpenses.innerText);
-    const managerInputFieldValue=getCoachCost('manager-input');
-    const coachInputFieldValue=getCoachCost('coach-input');
+    const managerInputFieldValue= getTextInputFieldValue('manager-input');
+    const coachInputFieldValue= getTextInputFieldValue('coach-input');
     let totalCostValue=playerExpensesValue+ managerInputFieldValue+coachInputFieldValue;
      setTotalCostById('total-cost',totalCostValue);
  })
-
-
-
-
-
 
 
 
