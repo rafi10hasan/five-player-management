@@ -171,31 +171,31 @@
                      <h5 class="text-center pt-3">Budget</h5>
                         <div>
                             <span>per player:</span>
-                            <input type="text" class="input-box bg-dark rounded border-0 p-2 mb-3 text-white">
+                            <input id="per-player-cost" type="text" class="input-box bg-dark rounded border-0 p-2 mb-3 text-white">
                         </div>
 
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning fw-semibold mb-3">calculate</button>
+                            <button id="calculate-btn" type="button" class="btn btn-warning fw-semibold mb-3">calculate</button>
                            </div>
 
                            <div class="text-white mb-2">
                             <span>Player Expenses:</span>
-                            <span>$</span><span></span>
+                            <span>$</span><span id="player-expenses"></span>
                         </div>
 
                         <div>
                             <span>Manager:</span>
-                            <input type="text" class="input-box bg-dark rounded border-0 p-2 mb-2 text-white">
+                            <input type="text" id="manager-input" class="input-box bg-dark rounded border-0 p-2 mb-2 text-white">
                             <span>Coach:</span>
-                            <input type="text" class="input-box bg-dark rounded border-0 p-2 mb-3 text-white">
+                            <input type="text" id="coach-input" class="input-box bg-dark rounded border-0 p-2 mb-3 text-white">
                         </div>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning fw-semibold mb-3">calculate Total</button>
+                            <button type="button" id="calculate-total" class="btn btn-warning fw-semibold mb-3">calculate Total</button>
                            </div>
 
                            <div class="d-flex justify-content-between">
                                <h6>Total</h6>
-                               <h6>$<span>100</span></h6>
+                               <h6>$<span id="total-cost"></span></h6>
                            </div>
 
                         </div>
@@ -214,10 +214,11 @@
 
     </main>
 <!-- main section end here------ -->
-    
-    
+
+    <script src="./js/player-utilities.js"></script>
+    <script src="./js/player.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
-    <script src="./js/player.js"></script>
+    
   </body>
 </html>
