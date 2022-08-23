@@ -20,7 +20,7 @@ const displayPlayer=document.getElementById('player-display');
         
         `;
         ol.style.listStyle='none';
-        ol.style.display="inline-block"
+        
        displayPlayer.appendChild(ol);
        count++;
        
@@ -32,9 +32,10 @@ const displayPlayer=document.getElementById('player-display');
 document.getElementById("calculate-btn").addEventListener('click',function(){
     let totalPlayer=count;
     const totalPlayerInputField=getTextInputFieldValue('per-player-cost');
-    if(isNaN(totalPlayerInputField) ){
+    if(isNaN(totalPlayerInputField) || totalPlayerInputField<0){
         
         alert('please provide valid input.');
+        totalPlayerInputField=""
         return;
         
       }
@@ -53,14 +54,14 @@ document.getElementById('calculate-total').addEventListener('click',function(){
     const PlayerExpenses=document.getElementById('player-expenses')
     const playerExpensesValue=parseFloat(PlayerExpenses.innerText);
     const managerInputFieldValue= getTextInputFieldValue('manager-input');
-    if(isNaN(managerInputFieldValue) ){
+    if(isNaN(managerInputFieldValue || managerInputFieldValue<0) ){
         
         alert('please provide valid input.');
         return;
         
       }
     const coachInputFieldValue= getTextInputFieldValue('coach-input');
-    if(isNaN(coachInputFieldValue) ){
+    if(isNaN(coachInputFieldValue)|| coachInputFieldValue<0){
         
         alert('please provide valid input.');
         return;
